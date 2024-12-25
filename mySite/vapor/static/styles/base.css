@@ -1,0 +1,23 @@
+html {
+    background-color: #2c2a31;
+    color: white;
+}
+
+nav {
+
+    background-color: #c7bebecc;
+    font-size: 40px;
+    border-radius: 20px;
+}
+
+nav a {
+
+    display: inline;
+    margin-right: 30px;
+    text-decoration: none;
+}
+
+nav a:active {
+
+    color: purple;
+}

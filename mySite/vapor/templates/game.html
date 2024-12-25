@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}{{game.name}}{% endblock title %}
+{% block head %}
+
+    <link rel="stylesheet" href="{% static 'styles/game_page.css' %}">
+    
+{% endblock head %}
+{% block content %}
+
+    <div class="game">
+        <div class="game-info">
+            <p>Title:{{game.name}}</p>
+            <p>Relase Date:{{game.release_date}}</p>
+            <p>Publishers:{{game.publishers}}</p>
+            <p>Developers:{{game.developers}}</p>
+            <p>Description:{{game.description}}</p>
+            <p>Categories:{{game.categories}}</p>
+            <p>Genres:{{game.genres}}</p>
+        
+        {% if game.avg_rating %}
+            <p>Rating: {{game.avg_rating|floatformat:1}}</p>
+        {% else  %}
+            <p>Rating: The game is not yet rated.</p>
+        {% endif %}
+        </div>
+
+        <div class="game-image">
+
+            <img src="{{game.img_url}}" alt="{{game.name}}">
+
+        </div>
+
+    </div>
+    <h1>Add Rating</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+            {{form}}
+        <button>submit</button>
+    </form>
+
+
+
+{% endblock content %}

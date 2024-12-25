@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Home Page {% endblock %}
+{% block head %}    <link rel="stylesheet" href="{% static 'styles/index.css' %}">{% endblock head %}
+{% block content %}
+
+
+<div class="list-search">
+    <h1>List of games</h1>
+    
+    <input type="text" id="search" placeholder="search" onInput="onSearch(this)" spellCheck="False"/>
+    <div></div>
+</div>
+<div class="game-list" id="game-list">
+
+
+    {% for game in games %}
+    
+        <a href="{{game.slug}}">
+            <div class="image-container">
+                <img src="{{game.img_url}}" alt="{{game.name}}" class="fade-image">
+                <div class="overlay">{{game.name}}</div>
+            </div>
+        </a>
+    {% endfor %}
+
+            
+</div>
+
+<script>
+
+   async function onSearch(e){
+        const query = e.value
+        const response = await fetch(`http://127.0.0.1:8000/api/getGames?search=${query}`)
+        const data =  await response.json()
+        let result = ''
+        data.forEach(game => {
+
+            result += `<a href="${game.slug}"> <div class="image-container"> <img src="${game.img_url}" alt="${game.name}" class="fade-image"> <div class="overlay">${game.name}</div> </div></a>`
+                
+            })
+        document.getElementById('game-list').innerHTML = result 
+
+    }
+
+
+</script>
+
+{% endblock %}

@@ -1,0 +1,91 @@
+
+.list-search{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+}
+
+#search{
+    
+
+    width: 30rem;
+    margin-left: -10rem;
+    text-align: center;
+  
+
+}
+
+
+.container-div{
+
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+
+.game-list {
+
+
+    margin-left: 2rem;
+    margin-right: 2rem;
+
+    padding: 1rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    width: calc(100vW - 8rem);
+    justify-content: center;
+
+    border-radius: 20px;
+    background-color: gray;
+
+}
+
+.fade-image {
+    width: 200px;
+    /* Adjust as needed */
+    height: 200px;
+    object-fit: cover;
+    transition: opacity 0.5s ease;
+    /* Transition for fading */
+    border-radius: 20%;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent background */
+    color: white;
+    opacity: 0;
+    /* Hidden by default */
+    transition: opacity 0.5s ease;
+    /* Transition for the overlay */
+    border-radius: 20%;
+}
+
+.image-container:hover .fade-image {
+    opacity: 0.5;
+    /* Fade effect on the image */
+}
+
+.image-container:hover .overlay {
+    opacity: 1;
+    /* Show text on hover */
+}
+
+.image-container {
+    position: relative;
+}

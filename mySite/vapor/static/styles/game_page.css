@@ -1,0 +1,18 @@
+.game{
+
+    display: flex;
+    border-color:white;
+    border-style: solid;
+    justify-content: space-between;
+    padding: 2rem;
+    margin-right: 10rem;
+    margin-left:10rem
+
+}
+
+
+
+.game-info{
+
+    width: 25rem;
+}
