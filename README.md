@@ -1,11 +1,13 @@
-🕹️ GameZone
-A Django-based web application that displays a curated list of Steam games with detailed information. Built to explore full-stack development using Python and Django. This project is currently a work in progress.
+# 🕹️ GameZone
 
-🔧 Tech Stack
-Back-End: Django (Python)
+A Django-based web application that displays a curated list of Steam games with detailed information. Built to explore full-stack development using Python and Django.  
+**Note:** This project is currently a work in progress.
 
-Front-End: HTML, CSS (with Django templates)
+---
 
-Database: SQLite 
+## 🔧 Tech Stack
 
-Data Source: Steam API 
+- **Back-End:** Django (Python)
+- **Front-End:** HTML, CSS (Django templates)
+- **Database:** SQLite 
+- **Data Source:** Steam API 
